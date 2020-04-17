@@ -771,8 +771,8 @@ class ValidatorTest extends TestCase
         $this->validator->addUserInput([
             "url1" => "https://fredrikalexander.de",
             "url2" => "https://mlb.com",
-            "url3" => "https://google.com",
-            "url4" => "http://www.mail.co.uk",
+            "url3" => "https://google.com/?q=bla",
+            "url4" => "http://www.mail.co.uk/index.html?abc=def&bla=blubb",
             "url5" => "Hello",
             "url6" => "hello@doof.by",
             "url7" => "nourl.",

@@ -426,7 +426,7 @@ class Validator
     protected static function validateEmail(string $input, bool $is_email) : bool
     {
         if ($is_email) {
-            return (bool) preg_match('/^[A-z0-9._%+-]+@[A-z0-9.-]+\.[A-z]{2,}$/', $input);
+            return (bool) preg_match('/^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/', $input);
         }
         return true;
     }
@@ -442,7 +442,7 @@ class Validator
     {
         if ($is_url) {
             return (bool) preg_match(
-                '/^(ht|f)tp(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$/',
+                '/^(ftp|http|https):\/\/(([a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]+)|((25[0-5]|2[0-4][0-9]|[1][0-9][0-9]|[1-9][0-9]|[0-9]?)(\.(25[0-5]|2[0-4][0-9]|[1][0-9][0-9]|[1-9][0-9]|[0-9]?)){3}(:?[0-9]*)))?(\/.*)?$/',
                 $input
             );
         }
